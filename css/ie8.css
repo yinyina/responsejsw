@@ -1,0 +1,17 @@
+@import url("main.css");
+
+/*i8及以下样式*/
+.row { *margin:0;}
+.container_ie8 { width:1200px; overflow:hidden;} 
+.ie8_left { display:inline-block; float:left; width:800px; height:450px;}
+.ie8_right { display:inline-block; float:left; width:398px; height:450px; overflow-x:hidden; overflow-y:auto;}
+
+
+.courselist { overflow-y:auto!important;}
+
+
+
+
+
+
+

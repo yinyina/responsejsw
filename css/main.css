@@ -1,0 +1,106 @@
+*{ padding:0px; margin:0px; list-style-type:none; outline:none;}
+body{ background:#fff; color:#333; font-size:12px; line-height:24px; text-align:left; font-family:"微软雅黑",Microsoft YaHei,"黑体","宋体"; text-shadow:none;}
+a{ font-size:12px; text-decoration:none; color:#333; blr:expression(this.onFocus=this.blur()); outline:none;}
+a:hover { font-size:12px; text-decoration:none; blr:expression(this.onFocus=this.blur()); outline:none;}
+.clear_both { clear:both;}
+i { font-style:normal;}
+
+
+/*---------------------------------------------本站样式---------------------------------------------*/
+
+/*bootstrap样式复写*/
+p,dl { margin:0;}
+.padding_0 { padding-right:0; padding-left:0;}
+
+/*video.js样式复写*/
+.video-js .vjs-big-play-button {}
+.vjs-poster { background-color:none!important; filter:alpha(opacity=50); -moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5; }
+.video-js .vjs-time-control {}
+.video-js .vjs-current-time, .vjs-no-flex .vjs-current-time { display:block;}
+.video-js .vjs-duration, .vjs-no-flex .vjs-duration { display:block;}
+.video-js .vjs-time-divider { display:block;}
+.video-js .vjs-modal-dialog { display:none;} /*兼容safari win7不支持video*/
+
+/*课程标题*/
+.coursenamebox { background:#479fff;/}
+.coursenamecon { padding:15px; font-size:18px; font-weight:400; color:#fff; overflow:hidden;} 
+.coursename {}
+.coursename a { font-size:18px; font-weight:400; color:#fff;} /*兼容uc自动检索*/
+
+.mainbox { border:1px solid #ccc; overflow:hidden;}
+
+/*视频播放区*/
+.videobox { background:#fff;/* overflow:hidden;*/}
+.ios { /*-webkit-overflow-scrolling:touch; overflow-y:auto;*//*兼容ipad iframe不滚动*/}
+.videobox iframe { height: 100%; width: 100%;}  
+.video_cc { width:100%; height:100%;}
+.videobox video { background:#000;}
+.novideo { background:#000; width:100%; height:100%; display:flex; justify-content:center; align-items:center; font-size:16px; color:#fff;}
+
+/*课程目录*/
+.courselist { border-left:1px solid #ccc; overflow:hidden;}
+.courselist .courseli {}
+.courselist .courseli p,.courselist .courseli dl dd { border-bottom:1px solid #f2f2f2; overflow:hidden;}
+.courselist .courseli p span,.courselist .courseli dl dd span { padding-left:15px; *padding-left:5%; display:inline-block; float:left; width:70%; *width:65%; height:40px; line-height:40px; font-size:16px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.courselist .courseli p a,.courselist .courseli dl dd a,.courselist .courseli p .open { display:inline-block; float:right; width:30%; height:40px; line-height:40px; text-align:center; font-weight:400; font-size:14px; color:#479fff; cursor:pointer;}
+.openon { background:url(../images/open.png) no-repeat center center;}
+.closeon { background:url(../images/close.png) no-repeat center center;}
+.courselist .courseli p a.active,.courselist .courseli dl dd a.active { color:#fff; background:#38c; text-shadow:none; text-decoration:
+none;}
+.courselist .courseli dl dd span { padding-left:30px; *padding-left:10%; *width:60%; font-size:14px;}
+.courselist .courseli dl dd span a { display:inline; color:#333; float:none;} /*兼容uc自动检索*/
+
+/*mobile文本页*/
+.mobiletext { width:100%; height:100%; padding-top:50px; box-sizing:border-box;}
+.mobiletext .topbox { position:fixed; left:0; top:0; width:100%; padding:0 10px; height:50px; font-weight:400; background:#479fff; color:#fff; overflow:hidden;}
+.mobiletext .topbox .backto { display:inline-block; float:left; width:40%;}
+.mobiletext .topbox .backto .backlist { display:inline-block; height:50px; line-height:50px; font-weight:400; color:#fff; text-shadow:none; font-size:16px;}
+.mobiletext .topbox .backto .backlist:visited { color:#fff;}
+.mobiletext .topbox .dqwz { display:inline-block; float:right; width:60%; height:50px; line-height:50px; text-align:right; font-size:16px; text-shadow:none; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.mobiletext .textbox { background:#fff; width:100%; height:100%;-webkit-overflow-scrolling:touch; overflow:auto; }
+.textboxoverflow { overflow:hidden!important;}
+.mobiletext .textbox iframe { height: 100%; width: 100%; }
+
+/*下载*/
+.downbox { position:relative; width:100%; height:100%;} 
+.downbox a { display:block; margin:0 auto; width:180px; height:220px; position:absolute; left:50%;top:50%; margin-left:-90px;margin-top:-110px; font-size:16px; text-align:center;}
+.downbox img { width:180px; height:180px;}
+
+
+
+/*大于手机屏幕时的样式 sm >= 768px*/
+@media (min-width: 768px){
+    .courselist { overflow-x:hidden; overflow:auto; background:#f2fffb;}
+	.downbox { }
+}
+
+/*手机屏幕时的样式 xs < 768px*/
+@media (max-width: 767px){
+    .courselist { height:auto!important;}
+	.downbox { height:220px;}
+}
+
+
+/*-------------特殊处理-------------*/
+/*pc去掉视频下载按钮*/ 
+.pconly video::-internal-media-controls-download-button {
+    display:none;
+}
+
+.pconly video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+.pconly video::-webkit-media-controls-panel {
+    width: calc(100% + 24px); 
+}
+
+/*去掉mobile 360下cc的双进度条*/
+.videobox .video_cc section { z-index: 9999 !important;}
+.videobox .video_cc video::-webkit-media-controls-enclosure {
+  display:none !important;
+}
+
+
+
+
